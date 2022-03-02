@@ -1,0 +1,12 @@
+1- bu siteye giriş yap  https://www.saucedemo.com/
+2- username gir         id - username
+3- password gir         id - paswsord
+4-login tıkla           id - login-button
+5-ilkinin add to card tıkla
+                        id - add-to-cart-sauce-labs-backpack
+6- sepete tıkla
+
+    class - shopping_cart_link  -  a[class='shopping_cart_link']
+7- ürünün sepeette olduğunu Assert ile onayla
+                        class- inventory_item_name
+                        css  - div[class='inventory_item_name']
