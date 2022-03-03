@@ -1,6 +1,6 @@
 package gun13;
 
-import org.junit.Assert;
+import com.beust.ah.A;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
@@ -24,27 +24,25 @@ public class _04_Wait_Title extends BaseStaticDriver {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        //a[text()='Become a Member']
+        Actions builder = new Actions(driver);
 
-        WebElement become = driver.findElement(By.xpath("//a[text()='Become a Member']"));
-        Actions builder=new Actions(driver);
-        Action action=builder.moveToElement(become).build();
+        WebElement become = driver.findElement(By.cssSelector("li[class='root haschild child-2']"));
+
+        Action action = builder.moveToElement(become).build();
         action.perform();
 
-        WebElement teacher = driver.findElement(By.xpath("//li[@class='category child-3']/a[text()='Teachers']"));
+        WebElement teacher = driver.findElement(By.xpath("(//a[text()='Teachers'])[2]"));  ////li[@class='category child-3']/a[text()='Teachers']
         teacher.click();
 
-        String expected="Teachers | Yoga Alliance";
+        String expected = "Teachers | Yoga Alliance";
 
-        WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(driver,Duration.ofSeconds(10));
 
-        //boolean title=wait.until(ExpectedConditions.titleContains(expected));
-        boolean title1=wait.until(ExpectedConditions.titleIs(expected));
+//        boolean title = wait.until(ExpectedConditions.titleContains(expected));
+        boolean title_1 = wait.until(ExpectedConditions.titleIs(expected));
 
-        String resultTitle=driver.getTitle();
-        System.out.println("resultTitle = " + resultTitle);
-
-
+        String resultTitel = driver.getTitle();     // Bulundugumuz sayfanin title aliyoruz.
+        System.out.println("resultTitel = " + resultTitel);
 
 
     }

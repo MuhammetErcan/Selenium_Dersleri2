@@ -6,21 +6,23 @@ import utils.BaseStaticDriver;
 
 import java.time.Duration;
 
-public class _05_İFrame extends BaseStaticDriver {
+public class _07_İFrame3 extends BaseStaticDriver {
     public static void main(String[] args) {
-
         driver.get("https://chercher.tech/practice/frames");
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
 //        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-        driver.switchTo().frame(1); // "frame2"
+        driver.switchTo().frame(0);  // "frame1"
         // sitede birden fazla iframe var. Frame gecisi yapilmadiginda o alandaki elemente ulasamiyoruz
 
-        WebElement avatarOption = driver.findElement(By.xpath("//option[text()='Avatar']"));
-        avatarOption.click();
+
+        WebElement textBox = driver.findElement(By.cssSelector("body>input"));
+        textBox.sendKeys("Kraft Techno");
+
+        driver.switchTo().parentFrame();  // todo frame den cikmak icin bu kodu kullandik
+        WebElement selenium = driver.findElement(By.xpath("(//a[@class='nav-link head'])[2]"));
+        selenium.click();
 
         driver.quit();
-
-
     }
 }
