@@ -18,7 +18,6 @@ public class _04_Wait_Title extends BaseStaticDriver {
         Action ile Become a Member uzerine geliniz
         Teacher click yapiniz
         title  "Teachers | Yoga Alliance"  olana kadar beklet
-
      */
     public static void main(String[] args) {
         driver.get("https://www.yogaalliance.org/");
