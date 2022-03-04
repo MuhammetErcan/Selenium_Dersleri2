@@ -23,6 +23,6 @@ public class _07_İFrame3 extends BaseStaticDriver {
         WebElement selenium = driver.findElement(By.xpath("(//a[@class='nav-link head'])[2]"));
         selenium.click();
 
-        driver.quit();
+
     }
 }
