@@ -15,7 +15,7 @@ public class Driver {
         return getDriver(Browser.CHROME);
     }
 
-    public  WebDriver getDriver(Browser browser) {
+    public static WebDriver getDriver(Browser browser) {
         if (driver == null) {
             switch (browser) {
                 case FIREFOX:

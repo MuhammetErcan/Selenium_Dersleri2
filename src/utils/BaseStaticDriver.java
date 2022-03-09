@@ -18,6 +18,7 @@ import java.time.format.DateTimeFormatter;
 public class BaseStaticDriver {
 
     public static WebDriver driver;
+
     public static WebDriverWait wait;
 
     static {
@@ -32,6 +33,8 @@ public class BaseStaticDriver {
 
 
     }
+
+
 
     public static void sleep(long milis){
         try {
